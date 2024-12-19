@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.owl-ontologies.com/Ontology1364995044.owl#"
+     xml:base="http://www.owl-ontologies.com/Ontology1364995044.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:math="http://www.owl-ontologies.com/Ontology1364995044.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <owl:Ontology rdf:about="http://www.owl-ontologies.com/Ontology1364995044.owl"/>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="#MathTopic"/>
+    <owl:Class rdf:about="#Concept"/>
+    <owl:Class rdf:about="#Example"/>
+
+    <!-- Properties -->
+    <owl:ObjectProperty rdf:about="#hasConcept">
+        <rdfs:domain rdf:resource="#MathTopic"/>
+        <rdfs:range rdf:resource="#Concept"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasExample">
+        <rdfs:domain rdf:resource="#Concept"/>
+        <rdfs:range rdf:resource="#Example"/>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAnswer">
+        <rdfs:domain rdf:resource="#Example"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Triangle Area -->
+    <MathTopic rdf:about="#TriangleArea">
+        <hasConcept rdf:resource="#TriangleConcept"/>
+    </MathTopic>
+
+    <Concept rdf:about="#TriangleConcept">
+        <rdfs:label>Area of a Triangle</rdfs:label>
+        <hasExample rdf:resource="#TriangleExample1"/>
+    </Concept>
+
+    <Example rdf:about="#TriangleExample1">
+        <rdfs:label>Calculate the area of a triangle with base 5 units and height 4 units</rdfs:label>
+        <hasAnswer>10 square units</hasAnswer>
+    </Example>
+
+    <!-- Square Area -->
+    <MathTopic rdf:about="#SquareArea">
+        <hasConcept rdf:resource="#SquareConcept"/>
+    </MathTopic>
+
+    <Concept rdf:about="#SquareConcept">
+        <rdfs:label>Area of a Square</rdfs:label>
+        <hasExample rdf:resource="#SquareExample1"/>
+    </Concept>
+
+    <Example rdf:about="#SquareExample1">
+        <rdfs:label>Calculate the area of a square with side length 4 units</rdfs:label>
+        <hasAnswer>16 square units</hasAnswer>
+    </Example>
+
+    <!-- Circle Area -->
+    <MathTopic rdf:about="#CircleArea">
+        <hasConcept rdf:resource="#CircleConcept"/>
+    </MathTopic>
+
+    <Concept rdf:about="#CircleConcept">
+        <rdfs:label>Area of a Circle</rdfs:label>
+        <hasExample rdf:resource="#CircleExample1"/>
+    </Concept>
+
+    <Example rdf:about="#CircleExample1">
+        <rdfs:label>Calculate the area of a circle with radius 3 units</rdfs:label>
+        <hasAnswer>28.26 square units</hasAnswer>
+    </Example>
+
+</rdf:RDF>
